@@ -9,7 +9,7 @@ class TranslationsLoader {
     String? fallbackLanguageCode,
   }) async {
     try {
-      final path = 'packages/payu_translations/assets/lang/$languageCode.json';
+      final path = 'packages/payu_translations/assets/lang/${languageCode.toLowerCase()}.json';
       final source = await rootBundle.loadString(path);
       return Map<String, String>.from(jsonDecode(source));
     } catch (e) {
